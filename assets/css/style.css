@@ -23,7 +23,7 @@ h1 {
   font-weight: 900;
 }
 
-.grid-section h1 {
+.flex-section h1 {
   margin-bottom: 1rem;
 }
 
@@ -188,6 +188,7 @@ video {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .intro p {
@@ -237,6 +238,7 @@ form {
   font-weight: 400;
   text-align: center;
   flex: 0 0 auto;
+  cursor: pointer;
 }
 
 .form form button::after {
@@ -298,11 +300,6 @@ form {
   gap: 8px;
   padding: 0;
   display: block;
-}
-
-.grid-section {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
 }
 
 .tv-device,
@@ -390,6 +387,8 @@ form {
   width: 3rem;
   background-image: url("../videos/download-icon.gif");
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .questions {
@@ -436,6 +435,10 @@ form {
   display: block;
 }
 
+.questions img.transform {
+  transform: rotate(45deg);
+}
+
 footer {
   padding: 4.5rem 0;
 }
@@ -454,7 +457,7 @@ footer p a {
 
 footer ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 0.75rem));
+  grid-template-columns: repeat(auto-fit, minmax(18.375rem, 1rem));
   gap: 0.75rem;
   font-size: 0.875rem;
   text-decoration: underline;
@@ -497,4 +500,161 @@ footer.item-2 {
 
 footer span {
   font-size: 0.875rem;
+}
+
+@media (max-width: 960px) {
+  .container {
+    margin: 0 40px;
+    max-width: 900px;
+  }
+
+  .logo img {
+    height: 24px;
+  }
+
+  .flex-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 4.5rem 0;
+  }
+
+  .tv-device h1 {
+    margin-top: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+  }
+
+  .flex-section p {
+    font-size: 1.125rem;
+  }
+
+  .tv-content {
+    margin: 0 150px;
+  }
+
+  .kids-content {
+    text-align: center;
+  }
+
+  .device,
+  .download {
+    flex-direction: column-reverse;
+  }
+
+  .download-item {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+  }
+
+  .form span {
+    font-size: 1.125rem;
+  }
+
+  .form {
+    padding: 0px;
+  }
+
+  .form form button,
+  .questions button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .tv-content {
+    margin: 0;
+  }
+  .download-item {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+    width: 60%;
+    bottom: 15%;
+  }
+
+  .download-item span {
+    font-size: 0.8rem;
+  }
+
+  .download-gif {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .header select {
+    width: 0.0625rem;
+  }
+
+  .plan {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 20px;
+    padding: 30px;
+  }
+
+  .plan-img {
+    margin-top: -80px;
+  }
+
+  .plan p {
+    font-size: 1rem;
+  }
+
+  .flex-section {
+    padding: 3.5rem 0;
+  }
+
+  .tv-device h1 {
+    margin-top: 5rem;
+  }
+
+  .download-item {
+    width: 60%;
+    bottom: 11%;
+    padding: 4px;
+  }
+
+  .download-item h3 {
+    font-size: 0.875rem;
+    margin: 0;
+  }
+
+  .download-item span {
+    font-size: 0.75rem;
+  }
+
+  .questions dt button {
+    font-size: 1.125rem;
+    text-align: left;
+  }
+
+  form {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .form form input {
+    width: 100%;
+  }
+
+  .intro form {
+    width: 90%;
+  }
+
+  .intro button {
+    margin-bottom: 60px;
+  }
+
+  .questions button {
+    width: max-content;
+  }
 }
